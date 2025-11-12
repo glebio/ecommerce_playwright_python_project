@@ -1,0 +1,31 @@
+# venv & caches
+.venv/
+**/__pycache__/
+.pytest_cache/
+*.pyc
+
+# Playwright / pytest-playwright
+.playwright/
+test-results/
+playwright-report/
+trace.zip
+**/trace*.zip
+**/*.webm
+**/*.png
+
+# Reports
+reports/
+*.html
+*.log
+
+# Env & coverage
+.env
+.env.*
+!.env.example
+.coverage
+coverage.xml
+
+# OS / IDE
+.DS_Store
+.idea/
+.vscode/
