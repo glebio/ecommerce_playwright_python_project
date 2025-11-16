@@ -34,6 +34,5 @@ class Selectors:
         """
         Locators for a product listing category page.
         """
-
-    HEADER_TITLE = "h1"
-    PRODUCT_LIST_CONTAINER = ".product-list"
+        HEADER_TITLE = "h1"
+        PRODUCT_LIST_CONTAINER = ".product-layout.product-list"

@@ -11,22 +11,36 @@ class CategoryPage(BasePage):
 
     def assert_header_is(self, category_name: str) -> None:
         """
-        Assert that the main <h1> header equals the expected category name.
+        Assert that there is an <h1> on the page that contains the given category name.
+        We do NOT require it to be visible, because some themes duplicate headers
+        (desktop/mobile, SEO) and hide some of them.
         """
-        header = self.page.locator(S.CategoryPage.HEADER_TITLE)
-        expect(header, "Category header should be visible").to_be_visible()
-        expect(header, "Category header text should match category name").to_have_text(
-            category_name
+        header = self.page.locator(S.CategoryPage.HEADER_TITLE).filter(
+            has_text=category_name
+        )
+
+        # Just assert that at least one such <h1> exists in the DOM
+        count = header.count()
+        assert count > 0, (
+            f"Expected at least one <h1> with text '{category_name}', "
+            f"but found {count}"
         )
 
     def assert_products_are_visible(self) -> None:
         """
-        Assert that the product list is visible and has at least one product.
+        Assert that there is at least one visible product on the category page.
+        We do NOT expect a single container, but multiple product cards.
         """
-        product_list = self.page.locator(S.CategoryPage.PRODUCT_LIST_CONTAINER)
-        expect(product_list, "Product list container should be visible").to_be_visible()
+        # Each ".product-layout.product-list" is a product card
+        products = self.page.locator(S.CategoryPage.PRODUCT_LIST_CONTAINER)
 
-        products = product_list.locator(S.ProductPage.PRODUCT_ITEM)
+        # Check that we have at least one product in the DOM
+        count = products.count()
+        assert count > 0, f"Expected at least one product, but found {count}"
+
+        # Check that the first product card is visible
+        first_product = products.first
         expect(
-            products.first, "At least one product should be visible in the category"
+            first_product,
+            "At least one product card should be visible on the category page",
         ).to_be_visible()

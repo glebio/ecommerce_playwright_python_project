@@ -20,7 +20,6 @@ def test_navigate_to_category_and_see_products(page: Page):
     """
     home = HomePage(page)
 
-    # TODO: choose a category that definitely exists in your store
     category_to_test = "Smartphones & Accessories"
 
     # 1. Open home page
