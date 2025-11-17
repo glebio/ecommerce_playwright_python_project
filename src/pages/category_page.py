@@ -1,6 +1,7 @@
 from playwright.sync_api import Page, expect
 from src.pages.base_page import BasePage
 from src.locators import Selectors as S
+from src.pages.product_page import ProductPage
 
 
 class CategoryPage(BasePage):
@@ -29,7 +30,6 @@ class CategoryPage(BasePage):
     def assert_products_are_visible(self) -> None:
         """
         Assert that there is at least one visible product on the category page.
-        We do NOT expect a single container, but multiple product cards.
         """
         # Each ".product-layout.product-list" is a product card
         products = self.page.locator(S.CategoryPage.PRODUCT_LIST_CONTAINER)
@@ -44,3 +44,11 @@ class CategoryPage(BasePage):
             first_product,
             "At least one product card should be visible on the category page",
         ).to_be_visible()
+
+    def open_first_product(self) -> ProductPage:
+        """
+        Open the first product from the listing and return ProductPage.
+        """
+        # Click on the first product title/link
+        self.page.locator(S.ProductPage.PRODUCT_ITEM_LINK).first.click()
+        return ProductPage(self.page)
