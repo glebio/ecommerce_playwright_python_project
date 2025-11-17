@@ -28,7 +28,14 @@ class Selectors:
             )
 
     class ProductPage:
-        PRODUCT_ITEM = ".product-item h4"
+        LIST_VIEW_BUTTON = '#list-view'
+        PRODUCT_ITEM = '.product-item h4'
+        PRODUCT_PRICE = 'p[class="price"]'
+        ADD_TO_CART_BUTTON = '#button-cart'
+        CART_BUTTON = '#cart'
+        VIEW_CART_BUTTON = '//p[@class="text-right"]/a[1]'
+        PRODUCT_ITEM_LINK = '.product-item a'
+        PRODUCT_TITLE = '#content h1'
 
     class CategoryPage:
         """
@@ -36,3 +43,7 @@ class Selectors:
         """
         HEADER_TITLE = "h1"
         PRODUCT_LIST_CONTAINER = ".product-layout.product-list"
+
+    class CartPage:
+        CART_ITEM = 'div[class="table-responsive"] tbody tr'
+
