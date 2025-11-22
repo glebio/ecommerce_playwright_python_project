@@ -29,18 +29,19 @@ Automated Testing!
 
 This **Test Framework** provides robust and maintainable UI test automation for **E-commerce websites**.
 
-For a real demonstration of how the automated tests work, a dedicated test
-website is used 🚀: <a href="https://shop.qaresults.com" target="_blank">shop.qaresults.com</a>
+For a real demonstration of how the automated tests work, our team developed a dedicated test
+website 🚀: <a href="https://shop.qaresults.com" target="_blank">shop.qaresults.com</a>&nbsp;<br/><br/>
+[![Shop Screenshot](https://github.com/user-attachments/assets/ad92704b-a6bb-4779-9b33-24cf3326280f "Click to open test store")](https://shop.qaresults.com)<br/><br/>
 
 Framework is built with:
 - ![Playwright](https://img.shields.io/badge/-Playwright-45ba63?logo=playwright&logoColor=white) [Playwright](https://playwright.dev/python/)
 - ![Python](https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white) [Python](https://www.python.org/)
 - ![Pytest](https://img.shields.io/badge/-Pytest-0A9EDC?logo=pytest&logoColor=white) [Pytest](https://docs.pytest.org/)
 
-It focuses on validating critical user flows such as **product search**, **category navigation**, and **add to cart**, and is designed to be easily extendable to checkout, filters, sorting, and user account flows.
+It focuses on validating critical user flows such as **product search**, **filtering**, **sorting**, **user-generated
+interactions** (like reviews and ratings) ond others.
 
 ---
-
 ## ✨ Key Features
 
 * **Page Object Model (POM):** Strict separation between test logic (what to test) and page interaction (how to test).
