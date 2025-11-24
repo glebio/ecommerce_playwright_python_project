@@ -41,29 +41,32 @@ Framework is built with:
 It focuses on validating critical user flows such as **product search**, **filtering**, **sorting**, **user-generated
 interactions** (like reviews and ratings) ond others.
 
----
 ## ✨ Key Features
 
-* **Page Object Model (POM):** Strict separation between test logic (what to test) and page interaction (how to test).
-* **Fluent Interface:** Page methods return other Page Objects, allowing for readable method chaining (e.g., `home.search("iPhone").open_first_product()`).
-* **Smart Locators:** Centralized locator storage (`src/locators.py`) for easy maintenance.
-* **Cross-Browser:** Supports Chromium (Chrome), Firefox, and WebKit (Safari).
-* **Environment Management:** Configuration via `.env` files and `pytest.ini`.
-* **Robust Assertions:** Uses Playwright's auto-retrying assertions to eliminate flaky tests.
+- **Page Object Model (POM)**  
+  Clear separation between test logic (what to test) and page interaction (how to test), with reusable page classes (`HomePage`, `CategoryPage`, `ProductPage`, `CartPage`, etc.).
 
----
-## Key Features
+- **Fluent Interface**  
+  Page methods return other Page Objects to enable readable flows, for example:  
+  `home.open().search("iPhone").open_first_product()`
 
-- **Playwright + Pytest + POM**
-    - Clear Page Object Model structure with reusable page classes.
-- **Automated UI Tests**
-    - Covers key user journeys: search, category navigation, add to cart (guest).
-- **Centralized Selectors**
-    - All locators stored in a single `Selectors` class to simplify maintenance.
-- **Environment Configuration**
-    - Base URL and other settings are loaded from `.env`.
-- **Scalable Architecture**
-    - Ready to extend with more pages, utilities, parametrized tests and CI/CD integration.
+- **Automated UI Smoke Scenarios**  
+  Ready-made tests for core user journeys: product search, category navigation via vertical menu, and adding a product to the cart as a guest user.
+
+- **Smart, Centralized Locators**  
+  All selectors are stored in a single `Selectors` class (`src/locators.py`), making UI changes easy to maintain.
+
+- **Environment Configuration**  
+  Base URL and other settings are managed via `.env` and a small config helper (`src/utils/config.py`), with integration into `pytest` fixtures.
+
+- **Cross-Browser Ready**  
+  Supports Chromium/Chrome out of the box and can be easily extended to Firefox and WebKit.
+
+- **Robust, Auto-Retrying Assertions**  
+  Uses Playwright’s built-in expect-API with auto-waiting to reduce flakiness and stabilize UI tests.
+
+- **Scalable Architecture**  
+  Structure is ready to be extended with new pages, parametrized tests, reporting, and CI/CD integration.
 
 ## Requirements
 
