@@ -18,7 +18,7 @@ Automated Testing!
 - [Installation](#installation)
 - [Usage](#usage)
 - [Project Structure](#project-structure)
-- [Implemented Test Scenarios](#implemented-test-scenarios)
+- [Test Coverage: Detailed List of Test Cases](#test-coverage-detailed-list-of-test-cases)
 - [Planned / Extended Test Coverage](#planned--extended-test-coverage)
 - [Contributing](#contributing)
 - [License](#license)
@@ -116,6 +116,15 @@ ecommerce_playwright_python_project/
 ├── requirements.txt              # Python dependencies
 └── README.md                     # Project Documentation
 ```
+---
+## Test Coverage: Detailed List of Test Cases
+
+Below is a comprehensive list of test cases designed for an E-commerce site. These cover everything from basic smoke
+checks to more in-depth scenarios like user authentication, payment flows, and performance testing.
+
+> ✅ – Autotest is ready and implemented.
+
+---
 ## Contributing
 
 Contributions are welcome! Please follow our existing coding conventions and testing standards. If you add or revise
